@@ -1,0 +1,155 @@
+{% extends 'base2.html.twig' %}
+{% block head %} {% block stylesheet %} {{ parent() }}{% endblock %} {% endblock %}
+{% block body %}
+    {% block con %}    {{ parent() }} {% endblock %}
+    <div class="alice-bg padding-top-70 padding-bottom-70">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-6">
+            <div class="breadcrumb-area">
+              <h1>Dashboard Employeur</h1>
+              <nav aria-label="breadcrumb">
+                <ol class="breadcrumb">
+                  <li class="breadcrumb-item"><a href="#">Accueil</a></li>
+                  <li class="breadcrumb-item active" aria-current="page">Modifier Profile</li>
+                </ol>
+              </nav>
+            </div>
+          </div>
+          <div class="col-md-6">
+            <div class="breadcrumb-form">
+              <form action="#">
+                <input type="text" placeholder="Enter Keywords">
+                <button><i data-feather="search"></i></button>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Breadcrumb End -->
+
+    <div class="alice-bg section-padding-bottom">
+      <div class="container no-gliters">
+        <div class="row no-gliters">
+          <div class="col">
+            <div class="dashboard-container">
+              <div class="dashboard-content-wrapper">
+                {{form_start(modifierProfilForm , {'attr' : {'class' :'dashboard-form'}})}}
+                  <div class="dashboard-section upload-profile-photo">
+                    <div class="update-photo">
+                    
+                    </div>
+                    <div class="file-upload"> 
+                </div>
+
+                  </div>
+                  <div class="dashboard-section basic-info-input">
+                  
+                                  {{form_widget(modifierProfilForm.imageFile)}}    
+                          
+                    <h4><i data-feather="user-check"></i>Informations basiques</h4>
+                    <div class="form-group row">
+                      <label class="col-sm-3 col-form-label">Prénom</label>
+                      <div class="col-sm-9">
+                      {% if app.user.firstname is not null %}
+                      {% set placeholder ='app.user.firstname' %}
+                        {{ form_widget(modifierProfilForm.firstname, {'attr': {'class': 'form-control' , 'placeholder': placeholder} }) }}
+                        {% else %}
+                        {{ form_widget(modifierProfilForm.firstname, {'attr': {'class': 'form-control' , 'placeholder': 'Prénom'} }) }}
+                        {% endif %}
+
+                      </div>
+                    </div>
+                    <div class="form-group row">
+                      <label class="col-sm-3 col-form-label">Nom</label>
+                      <div class="col-sm-9">
+                       {% if app.user.firstname is not null %}
+                      {% set placeholder ='app.user.lastname' %}
+                        {{ form_widget(modifierProfilForm.lastname, {'attr': {'class': 'form-control' , 'placeholder': placeholder} }) }}
+                        {% else %}
+                        {{ form_widget(modifierProfilForm.lastname, {'attr': {'class': 'form-control' , 'placeholder': 'Nom'} }) }}
+                        {% endif %}
+                      </div>
+                    </div>
+                    <div class="form-group row">
+                      <label class="col-sm-3 col-form-label">Nom D'utilisateur</label>
+                      <div class="col-sm-9">
+                        <input type="text" class="form-control" placeholder="{{app.user.username}}" disabled>
+                      </div>
+                    </div>
+                    <div class="form-group row">
+                      <label class="col-sm-3 col-form-label">Adresse email</label>
+                      <div class="col-sm-9">
+                        <input type="text" class="form-control" placeholder="{{app.user.email}}" disabled>
+                      </div>
+                    </div>
+                    <div class="form-group row">
+                      <label class="col-sm-3 col-form-label">Numéro téléphone</label>
+                      <div class="col-sm-9">
+                        {% if app.user.numTel is not null %}
+                      {% set placeholder ='app.user.numTel' %}
+                        {{ form_widget(modifierProfilForm.numTel, {'attr': {'class': 'form-control' , 'placeholder': placeholder} }) }}
+                        {% else %}
+                        {{ form_widget(modifierProfilForm.numTel, {'attr': {'class': 'form-control' , 'placeholder': '+55 123 4563 4643'} }) }}
+                        {% endif %}                    
+                          </div>
+                    </div>
+                    <div class="form-group row">
+                      <label class="col-sm-3 col-form-label">Nom Société</label>
+                      <div class="col-sm-9">
+                        {% if app.user.societe is  null %}
+                        {{ form_widget(modifierProfilForm.societe, {'attr': {'class': 'form-control' , 'placeholder':' ' } }) }}
+                        {% else %}
+                        {{ form_widget(modifierProfilForm.societe, {'attr': {'class': 'form-control'} }) }}
+                        {% endif %}                    
+                          </div>
+                    </div>
+                    <div class="form-group row">
+                      <label class="col-sm-3 col-form-label">Addresse</label>
+                      <div class="col-sm-9">
+                      {% if app.user.city is not null %}
+                      {% set placeholder ='app.user.city' %}
+                        {{ form_widget(modifierProfilForm.city, {'attr': {'class': 'form-control' , 'placeholder': placeholder} }) }}
+                        {% else %}
+                        {{ form_widget(modifierProfilForm.city, {'attr': {'class': 'form-control' , 'placeholder': 'Washington D.C'} }) }}
+                        {% endif %}
+                      </div>
+                    </div>
+                     <div class="form-group row">
+                      <label class="col-sm-3 col-form-label">Domaine</label>
+                      <div class="col-sm-9">
+                     
+                        {{ form_widget(modifierProfilForm.job, {'attr': {'class': 'form-control'} }) }}
+                        
+                      </div>
+                    </div>
+                    
+                  </div>
+                  <div class="dashboard-section basic-info-input">
+                    
+                    <div class="form-group row">
+                      <label class="col-sm-3 col-form-label"></label>
+                      <div class="col-sm-9">
+                    {{ form_widget(modifierProfilForm.Modifier, {'attr': {'class': 'button' , 'placeholder': 'Sauvegarder' } }) }}
+                      </div>
+                    </div>
+                  </div>
+                  {{form_end(modifierProfilForm) }}
+           
+            </div>
+              
+                {%block sidebar%}    {{ parent() }}
+                {% endblock %}
+          </div>
+        </div>
+      </div>
+    </div>
+
+    {% block action %} {{ parent() }} {% endblock %}
+    {% block footer %} {{ parent() }} {% endblock %}
+
+
+
+
+{% endblock %}

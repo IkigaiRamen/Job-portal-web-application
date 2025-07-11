@@ -1,0 +1,652 @@
+{% extends 'base.html.twig' %}
+{% block head %} {% block stylesheet %} {{ parent() }}{% endblock %} {% endblock %}
+{% block body %}
+    {% block con %}    {{ parent() }} {% endblock %}
+
+    <!-- Breadcrumb -->
+    <div class="alice-bg padding-top-70 padding-bottom-70">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="breadcrumb-area">
+                        <h1>Modifier Curriculum vitae</h1>
+                        <nav aria-label="breadcrumb">
+                            <ol class="breadcrumb">
+                                <li class="breadcrumb-item"><a href="#">Accueil</a></li>
+                                <li class="breadcrumb-item active" aria-current="page">Modifier Curriculum vitae</li>
+                            </ol>
+                        </nav>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="breadcrumb-form">
+                        <form action="#">
+                            <input type="text" placeholder="Enter Keywords">
+                            <button><i data-feather="search"></i></button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Breadcrumb End -->
+
+    <div class="alice-bg section-padding-bottom">
+        <div class="container no-gliters">
+            <div class="row no-gliters">
+                <div class="col">
+                    <div class="dashboard-container">
+                        <div class="dashboard-content-wrapper">
+                            <div class="download-resume dashboard-section">
+                                <div class="update-file">
+                                    <input type="file">Update CV <i data-feather="edit-2"></i>
+                                </div>
+                                <div class="update-file">
+                                    <input type="file">Update Cover Letter <i data-feather="edit-2"></i>
+                                </div>
+                                <span>Upload PDF File</span>
+                            </div>
+                            <div class="skill-and-profile dashboard-section">
+                                <div class="social-profile">
+                                    <label>Social:</label>
+                                    <a href="#"><i class="fab fa-facebook-f"></i></a>
+                                    <a href="#"><i class="fab fa-twitter"></i></a>
+                                    <a href="#"><i class="fab fa-google-plus"></i></a>
+                                    <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                                    <a href="#"><i class="fab fa-pinterest-p"></i></a>
+                                    <a href="#"><i class="fab fa-behance"></i></a>
+                                    <a href="#"><i class="fab fa-dribbble"></i></a>
+                                    <a href="#"><i class="fab fa-github"></i></a>
+                                    <!-- Button trigger modal -->
+                                    <button type="button" class="btn btn-primary edit-button" data-toggle="modal" data-target="#modal-social">
+                                        <i data-feather="edit-2"></i>
+                                    </button>
+                                    <!-- Modal -->
+                                    <div class="modal fade" id="modal-social" tabindex="-1" role="dialog" aria-hidden="true">
+                                        <div class="modal-dialog" role="document">
+                                            <div class="modal-content">
+                                                <div class="modal-body">
+                                                    <div class="title">
+                                                        <h4><i data-feather="git-branch"></i>Social Networks</h4>
+                                                        <a href="#" class="add-more">+ Add Social</a>
+                                                    </div>
+                                                    <div class="content">
+                                                        <form action="#">
+                                                            <div class="form-group row">
+                                                                <label class="col-sm-3 col-form-label">Social Links</label>
+                                                                <div class="col-sm-9">
+                                                                    <div class="input-group">
+                                                                        <div class="input-group-prepend">
+                                                                            <div class="input-group-text"><i class="fab fa-facebook-f"></i></div>
+                                                                        </div>
+                                                                        <input type="text" class="form-control"  placeholder="facebook.com/username">
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                            <div class="form-group row">
+                                                                <div class="offset-sm-3 col-sm-9">
+                                                                    <div class="input-group">
+                                                                        <div class="input-group-prepend">
+                                                                            <div class="input-group-text"><i class="fab fa-twitter"></i></div>
+                                                                        </div>
+                                                                        <input type="text" class="form-control"  placeholder="twitter.com/username">
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                            <div class="form-group row">
+                                                                <div class="offset-sm-3 col-sm-9">
+                                                                    <div class="input-group">
+                                                                        <div class="input-group-prepend">
+                                                                            <div class="input-group-text"><i class="fab fa-google-plus"></i></div>
+                                                                        </div>
+                                                                        <input type="text" class="form-control"  placeholder="google.com/username">
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                            <div class="form-group row">
+                                                                <div class="offset-sm-3 col-sm-9">
+                                                                    <div class="input-group">
+                                                                        <div class="input-group-prepend">
+                                                                            <div class="input-group-text"><i class="fab fa-linkedin-in"></i></div>
+                                                                        </div>
+                                                                        <input type="text" class="form-control"  placeholder="linkedin.com/username">
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                            <div class="form-group row">
+                                                                <div class="offset-sm-3 col-sm-9">
+                                                                    <div class="input-group">
+                                                                        <div class="input-group-prepend">
+                                                                            <div class="input-group-text"><i class="fab fa-pinterest-p"></i></div>
+                                                                        </div>
+                                                                        <input type="text" class="form-control"  placeholder="pinterest.com/username">
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                            <div class="form-group row">
+                                                                <div class="offset-sm-3 col-sm-9">
+                                                                    <div class="input-group">
+                                                                        <div class="input-group-prepend">
+                                                                            <div class="input-group-text"><i class="fab fa-instagram"></i></div>
+                                                                        </div>
+                                                                        <input type="text" class="form-control"  placeholder="instagram.com/username">
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                            <div class="form-group row">
+                                                                <div class="offset-sm-3 col-sm-9">
+                                                                    <div class="input-group">
+                                                                        <div class="input-group-prepend">
+                                                                            <div class="input-group-text"><i class="fab fa-behance"></i></div>
+                                                                        </div>
+                                                                        <input type="text" class="form-control"  placeholder="behance.com/username">
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                            <div class="form-group row">
+                                                                <div class="offset-sm-3 col-sm-9">
+                                                                    <div class="input-group">
+                                                                        <div class="input-group-prepend">
+                                                                            <div class="input-group-text"><i class="fab fa-dribbble"></i></div>
+                                                                        </div>
+                                                                        <input type="text" class="form-control"  placeholder="dribbble.com/username">
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                            <div class="form-group row">
+                                                                <div class="offset-sm-3 col-sm-9">
+                                                                    <div class="input-group">
+                                                                        <div class="input-group-prepend">
+                                                                            <div class="input-group-text"><i class="fab fa-github"></i></div>
+                                                                        </div>
+                                                                        <input type="text" class="form-control"  placeholder="github.com/username">
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                            <div class="form-group row">
+                                                                <div class="offset-sm-3 col-sm-9">
+                                                                    <div class="input-group">
+                                                                        <div class="input-group-prepend">
+                                                                            <div class="input-group-text dropdown-label">
+                                                                                <select class="form-control" id="exampleFormControlSelect1">
+                                                                                    <option>Select</option>
+                                                                                    <option>2</option>
+                                                                                    <option>3</option>
+                                                                                    <option>4</option>
+                                                                                    <option>5</option>
+                                                                                </select><i class="fa fa-caret-down"></i>
+                                                                            </div>
+                                                                        </div>
+                                                                        <input type="text" class="form-control"  placeholder="Input Profile Link">
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                            <div class="row">
+                                                                <div class="offset-sm-3 col-sm-9">
+                                                                    <div class="buttons">
+                                                                        <button class="primary-bg">Save Update</button>
+                                                                        <button class="" data-dismiss="modal">Annuler</button>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </form>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="about-details details-section dashboard-section">
+                                <h4><i data-feather="align-left"></i>A propos de moi</h4>
+                                <p>{{ app.user.bio}}</p>
+
+                                {% if app.user.job is not null %}
+                                    <div class="information-and-contact">
+                                        <div class="information">
+                                            <h4>Informations</h4>
+                                            <ul>
+                                                <li><span>Domaine:</span> {{app.user.job}}</li>
+                                                <li><span>Adresse:</span> {{ app.user.city }}</li>
+                                                <li><span>Etat:</span> {{ app.user.etat }}</li>
+                                                <li><span>Experience:</span> {{app.user.exp}} Années</li>
+                                                <li><span>Sexe:</span> {{ app.user.sex }}</li>
+                                                <li><span>Qualifications:</span> {{ app.user.qualification }}</li>
+                                            </ul>
+                                        </div>
+                                    </div>
+
+                                {% endif %}
+                                <!-- Button trigger modal -->
+                                <button type="button" class="btn btn-primary edit-resume" data-toggle="modal" data-target="#modal-about-me">
+                                    <i data-feather="edit-2"></i>
+                                </button>
+                                <!-- Modal -->
+                                <div class="modal fade" id="modal-about-me" tabindex="-1" role="dialog" aria-hidden="true">
+                                    <div class="modal-dialog" role="document">
+                                        <div class="modal-content">
+                                            <div class="modal-body">
+                                                <div class="title">
+                                                    <h4><i data-feather="align-left"></i>A propos de moi</h4>
+                                                </div>
+                                                <div class="content">
+                                                    {{ form_start(modifierCVForm) }}
+                                                    <div class="form-group row">
+                                                        <label class="col-sm-3 col-form-label">A propos de vous</label>
+                                                        <div class="col-sm-9">
+                                                            {{ form_widget(modifierCVForm.bio, {'attr': {'class': 'form-control' , 'placeholder': 'Décrivez vous' } }) }}
+                                                        </div>
+                                                    </div>
+                                                    <h4><i data-feather="align-left"></i>Information</h4>
+                                                    <div class="form-group row">
+                                                        <label class="col-sm-3 col-form-label">Domaine</label>
+                                                        <div class="col-sm-9">
+                                                            {% set jobPlaceholder = 'app.user.bio'%}
+                                                            {{ form_widget(modifierCVForm.job, {'attr': {'class': 'form-control' , 'placeholder': 'Domaine de travail' } }) }}
+                                                        </div>
+                                                    </div>
+                                                    <div class="form-group row">
+                                                        <label class="col-sm-3 col-form-label">Emplacement</label>
+                                                        <div class="col-sm-9">
+                                                            {{ form_widget(modifierCVForm.city, {'attr': {'class': 'form-control' , 'placeholder': '' } }) }}
+
+                                                        </div>
+                                                    </div>
+                                                    <div class="form-group row">
+                                                        <label class="col-sm-3 col-form-label">Etat</label>
+                                                        <div class="col-sm-9">
+                                                            {{ form_widget(modifierCVForm.etat, {'attr': {'class': 'form-control' , 'placeholder': '' } }) }}
+                                                        </div>
+                                                    </div>
+                                                    <div class="form-group row">
+                                                        <label class="col-sm-3 col-form-label">Experience</label>
+                                                        <div class="col-sm-9">
+                                                            {{ form_widget(modifierCVForm.exp, {'attr': {'class': 'form-control' , 'placeholder': '' } }) }}
+                                                        </div>
+                                                    </div>
+
+                                                    <div class="form-group row">
+                                                        <label class="col-sm-3 col-form-label">Sexe</label>
+                                                        <div class="col-sm-9">
+                                                            {{ form_widget(modifierCVForm.sex, {'attr': {'class': 'form-control' , 'placeholder': '' } }) }}
+                                                        </div>
+                                                    </div>
+
+                                                    <div class="form-group row">
+                                                        <label class="col-sm-3 col-form-label">Qualification</label>
+                                                        <div class="col-sm-9">
+                                                            {{ form_widget(modifierCVForm.qualification, {'attr': {'class': 'form-control' , 'placeholder': 'Qualifications' } }) }}
+                                                        </div>
+                                                    </div>
+                                                    <div class="row">
+                                                        <div class="offset-sm-3 col-sm-9">
+                                                            <div class="buttons">
+                                                                {{ form_widget(modifierCVForm.Modifier, {'attr': {'class': 'primary-bg' , 'placeholder': 'Sauvegarder' } }) }}
+                                                                <button class="" data-dismiss="modal">Annuler</button>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    {{ form_end(modifierCVForm) }}
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="edication-background details-section dashboard-section">
+                                <h4><i data-feather="book"></i>Fond d'education</h4>
+                                {% if app.user.titre1 is not null %}
+                                    <div class="education-label">
+                                        <span class="study-year">{{ app.user.periode1 }}</span>
+                                        <h5>{{ app.user.titre1 }}<span>@ {{ app.user.institut1 }}</span></h5>
+                                        <p>{{ app.user.description1 }}</p>
+                                    </div>
+
+                                    <div class="education-label">
+                                        <span class="study-year">{{ app.user.periode2 }}</span>
+                                        <h5>{{ app.user.titre2 }}<span>@ {{ app.user.institut2 }}</span></h5>
+                                        <p>{{ app.user.description1 }}</p>
+                                    </div>
+
+                                {% endif %}
+                                <!-- Button trigger modal -->
+                                <button type="button" class="btn btn-primary edit-resume" data-toggle="modal" data-target="#modal-education">
+                                    <i data-feather="edit-2"></i>
+                                </button>
+                                <!-- Modal -->
+                                <div class="modal fade modal-education" id="modal-education" tabindex="-1" role="dialog" aria-hidden="true">
+                                    <div class="modal-dialog" role="document">
+                                        <div class="modal-content">
+                                            <div class="modal-body">
+                                                <div class="content">
+                                                    {{ form_start(CvEducationForm) }}
+
+                                                    <h4><i data-feather="align-left"></i>Education</h4>
+                                                    <div class="form-group row">
+
+                                                        <label class="col-sm-3 col-form-label">Titre</label>
+                                                        <div class="col-sm-9">
+                                                            {% set jobPlaceholder = 'app.user.titre1'%}
+                                                            {{ form_widget(CvEducationForm.titre1, {'attr': {'class': 'form-control' , 'placeholder': ' ' } }) }}
+
+                                                        </div>
+                                                    </div>
+                                                    <div class="form-group row">
+                                                        <label class="col-sm-3 col-form-label">Institut</label>
+                                                        <div class="col-sm-9">
+                                                            {{ form_widget(CvEducationForm.institut1, {'attr': {'class': 'form-control' , 'placeholder': '' } }) }}
+
+                                                        </div>
+                                                    </div>
+                                                    <div class="form-group row">
+                                                        <label class="col-sm-3 col-form-label">Periode</label>
+                                                        <div class="col-sm-9">
+                                                            {{ form_widget(CvEducationForm.periode1, {'attr': {'class': 'form-control' , 'placeholder': '' } }) }}
+                                                        </div>
+                                                    </div>
+                                                    <div class="form-group row">
+                                                        <label class="col-sm-3 col-form-label">Description</label>
+                                                        <div class="col-sm-9">
+                                                            {{ form_widget(CvEducationForm.description1, {'attr': {'class': 'form-control' , 'placeholder': '' } }) }}
+                                                        </div>
+                                                    </div>
+
+                                                    <h4><i data-feather="align-left"></i>02</h4>
+                                                    <div class="form-group row">
+                                                        <label class="col-sm-3 col-form-label">Titre</label>
+                                                        <div class="col-sm-9">
+                                                            {% set jobPlaceholder = 'app.user.titre2'%}
+                                                            {{ form_widget(CvEducationForm.titre2, {'attr': {'class': 'form-control' , 'placeholder': '' } }) }}
+
+                                                        </div>
+                                                    </div>
+                                                    <div class="form-group row">
+                                                        <label class="col-sm-3 col-form-label">Institut</label>
+                                                        <div class="col-sm-9">
+                                                            {{ form_widget(CvEducationForm.institut2, {'attr': {'class': 'form-control' , 'placeholder': '' } }) }}
+
+                                                        </div>
+                                                    </div>
+                                                    <div class="form-group row">
+                                                        <label class="col-sm-3 col-form-label">Periode</label>
+                                                        <div class="col-sm-9">
+                                                            {{ form_widget(CvEducationForm.periode2, {'attr': {'class': 'form-control' , 'placeholder': '' } }) }}
+                                                        </div>
+                                                    </div>
+                                                    <div class="form-group row">
+                                                        <label class="col-sm-3 col-form-label">Description</label>
+                                                        <div class="col-sm-9">
+                                                            {{ form_widget(CvEducationForm.description2, {'attr': {'class': 'form-control' , 'placeholder': '' } }) }}
+                                                        </div>
+                                                    </div>
+
+                                                    <div class="row">
+                                                        <div class="offset-sm-3 col-sm-9">
+                                                            <div class="buttons">
+
+                                                                {{ form_widget(CvEducationForm.Modifier, {'attr': {'class': 'primary-bg' , 'placeholder': 'Sauvegarder modifications' } }) }}
+                                                                <button class="" data-dismiss="modal">Annuler</button>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                {{ form_end(CvEducationForm) }}
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="experience dashboard-section details-section">
+                                <h4><i data-feather="briefcase"></i>L'expérience professionnelle</h4>
+                                {% if app.user.work1 is not null %}
+
+                                    <div class="experience-section">
+                                        <span class="service-year">{{ app.user.workperiod1 }}</span>
+                                        <h5>{{ app.user.work1 }}<span>@ {{ app.user.company1 }}</span></h5>
+                                        <p>{{ app.user.workdescription1 }}</p>
+                                    </div>
+
+                                    <div class="experience-section">
+                                        <span class="service-year">{{ app.user.workperiod2 }}</span>
+                                        <h5>{{ app.user.work2 }}<span>@ {{ app.user.company2 }}</span></h5>
+                                        <p>{{ app.user.workdescription2 }}</p>
+                                    </div>
+                                {% endif %}
+
+                                <!-- Button trigger modal -->
+                                <button type="button" class="btn btn-primary edit-resume" data-toggle="modal" data-target="#modal-experience">
+                                    <i data-feather="edit-2"></i>
+                                </button>
+                                <!-- Modal -->
+                                <div class="modal fade modal-experience" id="modal-experience" tabindex="-1" role="dialog" aria-hidden="true">
+                                    <div class="modal-dialog" role="document">
+                                        <div class="modal-content">
+                                            <div class="modal-body">
+                                                <div class="title">
+                                                    <h4><i data-feather="briefcase"></i>Experience</h4>
+                                                </div>
+                                                {{ form_start(CvWorkForm) }}
+
+                                                <div class="content">
+                                                    <div class="input-block-wrap">
+                                                        <div class="form-group row">
+                                                            <label class="col-sm-3 col-form-label">01</label>
+                                                            <div class="col-sm-9">
+                                                                <div class="input-group">
+                                                                    <div class="input-group-prepend">
+                                                                        <div class="input-group-text">Position</div>
+                                                                    </div>
+                                                                    {% set work1Placeholder = 'Position'%}
+
+                                                                    {{ form_widget(CvWorkForm.work1, {'attr': {'class': 'form-control' , 'placeholder': work1Placeholder } }) }}
+
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="form-group row">
+                                                            <div class="offset-sm-3 col-sm-9">
+                                                                <div class="input-group">
+                                                                    <div class="input-group-prepend">
+                                                                        <div class="input-group-text">Société</div>
+                                                                    </div>
+                                                                    {% set work1Placeholder = 'Société'%}
+
+                                                                    {{ form_widget(CvWorkForm.company1, {'attr': {'class': 'form-control' , 'placeholder': work1Placeholder} }) }}
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="form-group row">
+                                                            <div class="col-sm-9 offset-sm-3">
+                                                                <div class="input-group">
+                                                                    <div class="input-group-prepend">
+                                                                        <div class="input-group-text">Periode</div>
+                                                                    </div>
+                                                                    {% set work1Placeholder = 'Durée'%}
+
+                                                                    {{ form_widget(CvWorkForm.workperiod1, {'attr': {'class': 'form-control' , 'placeholder': work1Placeholder} }) }}
+
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="form-group row">
+                                                            <div class="offset-sm-3 col-sm-9">
+                                                                <div class="input-group">
+                                                                    <div class="input-group-prepend">
+                                                                        <div class="input-group-text">Description</div>
+                                                                    </div>
+                                                                    {% set work1Placeholder = 'Décrivez votre experience'%}
+
+                                                                    {{ form_widget(CvWorkForm.workdescription1, {'attr': {'class': 'form-control' , 'placeholder': work1Placeholder} }) }}
+
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="input-block-wrap">
+                                                        <div class="form-group row">
+                                                            <label class="col-sm-3 col-form-label">02</label>
+                                                            <div class="col-sm-9">
+                                                                <div class="input-group">
+                                                                    <div class="input-group-prepend">
+                                                                        <div class="input-group-text">Position</div>
+                                                                    </div>
+                                                                    {% set work1Placeholder = 'Position'%}
+
+                                                                    {{ form_widget(CvWorkForm.work2, {'attr': {'class': 'form-control' , 'placeholder': work1Placeholder} }) }}
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="form-group row">
+                                                            <div class="offset-sm-3 col-sm-9">
+                                                                <div class="input-group">
+                                                                    <div class="input-group-prepend">
+                                                                        <div class="input-group-text">Sociéte</div>
+                                                                    </div>
+                                                                    {% set work1Placeholder = 'Société'%}
+
+                                                                    {{ form_widget(CvWorkForm.company2, {'attr': {'class': 'form-control' , 'placeholder': work1Placeholder} }) }}
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="form-group row">
+                                                            <div class="col-sm-9 offset-sm-3">
+                                                                <div class="input-group">
+                                                                    <div class="input-group-prepend">
+                                                                        <div class="input-group-text">Periode</div>
+                                                                    </div>
+                                                                    {% set work1Placeholder = 'Durée'%}
+
+                                                                    {{ form_widget(CvWorkForm.workperiod2, {'attr': {'class': 'form-control' , 'placeholder': work1Placeholder} }) }}
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="form-group row">
+                                                            <div class="offset-sm-3 col-sm-9">
+                                                                <div class="input-group">
+                                                                    <div class="input-group-prepend">
+                                                                        <div class="input-group-text">Description</div>
+                                                                    </div>
+                                                                    {% set work1Placeholder = 'Décrivez votre experience'%}
+
+                                                                    {{ form_widget(CvWorkForm.workdescription2, {'attr': {'class': 'form-control' , 'placeholder': work1Placeholder} }) }}
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="row">
+                                                        <div class="offset-sm-3 col-sm-9">
+                                                            <div class="buttons">
+                                                                {{ form_widget(CvWorkForm.Modifier, {'attr': {'class': 'primary-bg' , 'placeholder': 'Sauvegarder modifications' } }) }}
+                                                                <button class="" data-dismiss="modal">Annuler</button>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    {{ form_end(CvWorkForm) }}
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="special-qualification dashboard-section details-section">
+                                <h4><i data-feather="gift"></i>Qualifications spéciales</h4>
+                                {% if app.user.qualification1 is not null %}
+                                    <ul>
+                                        <li>{{app.user.qualification1}}</li>
+                                        <li>{{app.user.qualification2}}</li>
+                                        <li>{{app.user.qualification3}}</li>
+                                        <li>{{app.user.qualification4}}</li>
+                                    </ul>
+                                {% endif %}
+                                <!-- Button trigger modal -->
+                                <button type="button" class="btn btn-primary edit-resume" data-toggle="modal" data-target="#modal-qualification">
+                                    <i data-feather="edit-2"></i>
+                                </button>
+                                <!-- Modal -->
+                                <div class="modal fade" id="modal-qualification" tabindex="-1" role="dialog" aria-hidden="true">
+                                    <div class="modal-dialog" role="document">
+                                        <div class="modal-content">
+                                            <div class="modal-body">
+                                                <div class="title">
+                                                    <h4><i data-feather="align-left"></i>Qualifications spéciales</h4>
+
+                                                </div>
+                                                <div class="content">
+                                                    {{form_start(CvQualificationsForm)}}
+                                                    <div class="form-group row">
+                                                        <label class="col-sm-3 col-form-label"></label>
+                                                        <div class="col-sm-9">
+                                                            <div class="input-group">
+                                                                <div class="input-group-prepend">
+                                                                    <div class="input-group-text">01</div>
+                                                                </div>
+                                                                {% set placeholder = 'app.user.qualification2'%}
+
+                                                                {{ form_widget(CvQualificationsForm.qualification1, {'attr': {'class': 'form-control' } }) }}
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="form-group row">
+                                                        <div class="offset-sm-3 col-sm-9">
+                                                            <div class="input-group">
+                                                                <div class="input-group-prepend">
+                                                                    <div class="input-group-text">02</div>
+                                                                </div>
+                                                                {{ form_widget(CvQualificationsForm.qualification2, {'attr': {'class': 'form-control' , 'placeholder': ''} }) }}
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="form-group row">
+                                                        <div class="offset-sm-3 col-sm-9">
+                                                            <div class="input-group">
+                                                                <div class="input-group-prepend">
+                                                                    <div class="input-group-text">03</div>
+                                                                </div>
+                                                                {{ form_widget(CvQualificationsForm.qualification3, {'attr': {'class': 'form-control' , 'placeholder': ''} }) }}
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="form-group row">
+                                                        <div class="offset-sm-3 col-sm-9">
+                                                            <div class="input-group">
+                                                                <div class="input-group-prepend">
+                                                                    <div class="input-group-text">04</div>
+                                                                </div>
+                                                                {{ form_widget(CvQualificationsForm.qualification4, {'attr': {'class': 'form-control' , 'placeholder': ''} }) }}
+                                                            </div>
+                                                        </div>
+                                                    </div>
+
+                                                    <div class="row">
+                                                        <div class="offset-sm-3 col-sm-9">
+                                                            <div class="buttons">
+                                                                {{ form_widget(CvQualificationsForm.Modifier, {'attr': {'class': 'primary-bg' , 'placeholder': 'Sauvegarder modifications' } }) }}
+                                                                <button class="" data-dismiss="modal">Annuler</button>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    {{ form_end(CvQualificationsForm) }}
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                        {%block sidebar%}    {{ parent() }}
+                        {% endblock %}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    {% block action %} {{ parent() }} {% endblock %}
+    {% block footer %} {{ parent() }} {% endblock %}
+
+
+
+
+{% endblock %}

@@ -1,0 +1,81 @@
+{% extends 'base2.html.twig' %}
+{% block head %} {% block stylesheet %} {{ parent() }}{% endblock %} {% endblock %}
+{% block body %}
+	{% block con %}    {{ parent() }} {% endblock %}
+
+
+
+<div class="alice-bg section-padding-bottom">
+	<div class="container no-gliters">
+		<div class="row no-gliters">
+			<div class="col">
+				<div class="dashboard-container">
+					<div class="dashboard-content-wrapper">
+						<div class="manage-job-container">
+							<table class="table">
+								<thead>
+								<tr>
+									<th>Titre</th>
+									<th>Personne</th>
+									<th>recu le :</th>
+									<th>Message</th>
+									<th class="action">Action</th>
+									<th class="action">Action</th>
+								</tr>
+								</thead>
+								<tbody>
+								<tr class="job-items">
+								
+									<td class="title"><h5>{{ message.title|trans }}</h5></td>
+									<td class="title"><h5>Message de {{ message.sender.email }}</h5></td>
+									<td class="title"><h5>Le {{ message.createdAt|date }}</h5></td>
+									<td class="title"><h5>{{ message.message|trans }}</h5></td>
+                                    <td><a href="{{path("send")}}" class="btn btn-primary">repondre</a></td>
+									<td><a href="{{path('message_delete',{"id":message.id})}}" class="btn btn-primary" >Supprimer</a></td>
+									
+								</tr>
+								    <br></br>
+									<th class="action">Action</th>						
+							</tbody>
+							</table>
+						</div>
+					</div>
+					{%block sidebar%}    {{ parent() }}
+					{% endblock %}
+				</div>
+			</div>
+		</div>
+	</div>
+
+
+
+
+{# 	<div class="offcanvas offcanvas-start" tabindex="-1" id="offcanvasExample" aria-labelledby="offcanvasExampleLabel">
+		<div class="offcanvas-header">
+			<h2 class="offcanvas-title" id="offcanvasExampleLabel">Mes dossiers</h2>
+			<button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+		</div>
+		<div class="offcanvas-body">
+            <div class="list-group">
+                <a href="{{ path("message") }}" class="list-group-item list-group-item-action">Accueil</a>
+            </div>
+            <div class="list-group">
+                <a href="{{ path("received") }}" class="list-group-item list-group-item-action active">Boîte de réception</a>
+            </div>
+            <div class="list-group">
+                <a href="{{ path("message") }}" class="list-group-item list-group-item-action">Eléments envoyés</a>
+            </div>
+		</div>
+	</div>
+#}
+
+
+
+
+	{% block action %} {{ parent() }} {% endblock %}
+	{% block footer %} {{ parent() }} {% endblock %}
+
+
+
+
+{% endblock %}

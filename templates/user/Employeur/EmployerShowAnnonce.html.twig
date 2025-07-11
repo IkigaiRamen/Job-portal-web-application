@@ -1,0 +1,314 @@
+{% extends 'base2.html.twig' %}
+{% block head %} {% block stylesheet %} {{ parent() }}{% endblock %} {% endblock %}
+{% block body %}
+    {% block con %}    {{ parent() }} {% endblock %}
+
+    <!-- Breadcrumb -->
+    <div class="alice-bg padding-top-70 padding-bottom-70">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-6">
+            <div class="breadcrumb-area">
+              <h1>Liste des offres</h1>
+              <nav aria-label="breadcrumb">
+                <ol class="breadcrumb">
+                  <li class="breadcrumb-item"><a href="#">ACCEUIL</a></li>
+                  <li class="breadcrumb-item active" aria-current="page">Liste des offres</li>
+                </ol>
+              </nav>
+            </div>
+          </div>
+          <div class="col-md-6">
+            <div class="breadcrumb-form">
+              <form action="#">
+                <input type="text" placeholder="entrer mot clés">
+                <button><i data-feather="search"></i></button>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Breadcrumb End -->
+
+    <div class="alice-bg section-padding-bottom">
+      <div class="container">
+        <div class="row no-gutters">
+          <div class="col">
+            <div class="employer-container">
+              <div class="filtered-employer-wrapper">
+                <div class="employer-view-controller-wrapper">
+                  <div class="employer-view-controller">
+                    <div class="controller list active">
+                      <i data-feather="menu"></i>
+                    </div>
+                    <div class="controller grid">
+                      <i data-feather="grid"></i>
+                    </div>
+                    <div class="employer-view-filter">
+                      <select class="selectpicker">
+                        <option value="" selected>Le plus récent</option>
+                        <option value="california">Top Rated</option>
+                        <option value="las-vegas">Most Popular</option>
+                      </select>
+                    </div>
+                  </div>
+                  
+                </div>
+                <div class="employer-filter-result">
+                  <div class="employer">
+                    <div class="thumb">
+                      <a href="#">
+                        <img src="images/employer/thumb-1.png" class="img-fluid" alt="">
+                      </a>
+                    </div>
+                    <div class="body">
+                      <div class="content">
+                        <h4><a href="employer-details.html">Theoreo Digital LTD</a></h4>
+                        <div class="info">
+                          <span class="company-category"><a href="#"><i data-feather="briefcase"></i>Entreprise de logiciels</a></span>
+                          <span class="location"><a href="#"><i data-feather="map-pin"></i>New York</a></span>
+                        </div>
+                      </div>
+                      <div class="button-area">
+                        <a href="#">Appliquer maintenant </a>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="employer">
+                    <div class="thumb">
+                      <a href="#">
+                        <img src="images/employer/thumb-2.png" class="img-fluid" alt="">
+                      </a>
+                    </div>
+                    <div class="body">
+                      <div class="content">
+                        <h4><a href="employer-details.html">Realhouse Property</a></h4>
+                        <div class="info">
+                          <span class="company-category"><a href="#"><i data-feather="briefcase"></i>Immobilier</a></span>
+                          <span class="location"><a href="#"><i data-feather="map-pin"></i>Washington, D.C.</a></span>
+                        </div>
+                      </div>
+                      <div class="button-area">
+                        <a href="#">Appliquer maintenant </a>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="employer">
+                    <div class="thumb">
+                      <a href="#">
+                        <img src="images/employer/thumb-3.png" class="img-fluid" alt="">
+                      </a>
+                    </div>
+                    <div class="body">
+                      <div class="content">
+                        <h4><a href="employer-details.html">Degoin Art Institute</a></h4>
+                        <div class="info">
+                          <span class="company-category"><a href="#"><i data-feather="briefcase"></i>Conception et Créatif</a></span>
+                          <span class="location"><a href="#"><i data-feather="map-pin"></i>San Francisco</a></span>
+                        </div>
+                      </div>
+                      <div class="button-area">
+                        <a href="#">Appliquer maintenant </a>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="employer">
+                    <div class="thumb">
+                      <a href="#">
+                        <img src="images/employer/thumb-4.png" class="img-fluid" alt="">
+                      </a>
+                    </div>
+                    <div class="body">
+                      <div class="content">
+                        <h4><a href="employer-details.html">Healthyeat Company</a></h4>
+                        <div class="info">
+                          <span class="company-category"><a href="#"><i data-feather="briefcase"></i>Health &amp; Medicine</a></span>
+                          <span class="location"><a href="#"><i data-feather="map-pin"></i>New York City</a></span>
+                        </div>
+                      </div>
+                      <div class="button-area">
+                        <a href="#">5 Open Positions</a>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="employer">
+                    <div class="thumb">
+                      <a href="#">
+                        <img src="images/employer/thumb-5.png" class="img-fluid" alt="">
+                      </a>
+                    </div>
+                    <div class="body">
+                      <div class="content">
+                        <h4><a href="employer-details.html">Digoin Creative LTD</a></h4>
+                        <div class="info">
+                          <span class="company-category"><a href="#"><i data-feather="briefcase"></i>Real Estate</a></span>
+                          <span class="location"><a href="#"><i data-feather="map-pin"></i>Los Angeles</a></span>
+                        </div>
+                      </div>
+                      <div class="button-area">
+                        <a href="#">3 Open Positions</a>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="employer">
+                    <div class="thumb">
+                      <a href="#">
+                        <img src="images/employer/thumb-6.png" class="img-fluid" alt="">
+                      </a>
+                    </div>
+                    <div class="body">
+                      <div class="content">
+                        <h4><a href="employer-details.html">Homolant Real Estate</a></h4>
+                        <div class="info">
+                          <span class="company-category"><a href="#"><i data-feather="briefcase"></i>Real Estate</a></span>
+                          <span class="location"><a href="#"><i data-feather="map-pin"></i>Seattle</a></span>
+                        </div>
+                      </div>
+                      <div class="button-area">
+                        <a href="#">6 Open Positions</a>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="employer">
+                    <div class="thumb">
+                      <a href="#">
+                        <img src="images/employer/thumb-7.png" class="img-fluid" alt="">
+                      </a>
+                    </div>
+                    <div class="body">
+                      <div class="content">
+                        <h4><a href="employer-details.html">IT Care Software LTD</a></h4>
+                        <div class="info">
+                          <span class="company-category"><a href="#"><i data-feather="briefcase"></i>Real Estate</a></span>
+                          <span class="location"><a href="#"><i data-feather="map-pin"></i>New York City</a></span>
+                        </div>
+                      </div>
+                      <div class="button-area">
+                        <a href="#">12 Open Positions</a>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="employer">
+                    <div class="thumb">
+                      <a href="#">
+                        <img src="images/employer/thumb-10.png" class="img-fluid" alt="">
+                      </a>
+                    </div>
+                    <div class="body">
+                      <div class="content">
+                        <h4><a href="employer-details.html">Doitco Bank</a></h4>
+                        <div class="info">
+                          <span class="company-category"><a href="#"><i data-feather="briefcase"></i>Real Estate</a></span>
+                          <span class="location"><a href="#"><i data-feather="map-pin"></i>Baltimore</a></span>
+                        </div>
+                      </div>
+                      <div class="button-area">
+                        <a href="#">9 Open Positions</a>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="employer">
+                    <div class="thumb">
+                      <a href="#">
+                        <img src="images/employer/thumb-8.png" class="img-fluid" alt="">
+                      </a>
+                    </div>
+                    <div class="body">
+                      <div class="content">
+                        <h4><a href="employer-details.html">Designer Required </a></h4>
+                        <div class="info">
+                          <span class="company-category"><a href="#"><i data-feather="briefcase"></i>Real Estate</a></span>
+                          <span class="location"><a href="#"><i data-feather="map-pin"></i>Washington, D.C.</a></span>
+                        </div>
+                      </div>
+                      <div class="button-area">
+                        <a href="#">12 Open Positions</a>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="employer">
+                    <div class="thumb">
+                      <a href="#">
+                        <img src="images/employer/thumb-9.png" class="img-fluid" alt="">
+                      </a>
+                    </div>
+                    <div class="body">
+                      <div class="content">
+                        <h4><a href="employer-details.html">Xzone Software Company</a></h4>
+                        <div class="info">
+                          <span class="company-category"><a href="#"><i data-feather="briefcase"></i>Real Estate</a></span>
+                          <span class="location"><a href="#"><i data-feather="map-pin"></i>Philadelphia</a></span>
+                        </div>
+                      </div>
+                      <div class="button-area">
+                        <a href="#">12 Open Positions</a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="pagination-list text-center">
+                  <nav class="navigation pagination">
+                    <div class="nav-links">
+                      <a class="prev page-numbers" href="#"><i class="fas fa-angle-left"></i></a>
+                      <a class="page-numbers" href="#">1</a>
+                      <span aria-current="page" class="page-numbers current">2</span>
+                      <a class="page-numbers" href="#">3</a>
+                      <a class="page-numbers" href="#">4</a>
+                      <a class="next page-numbers" href="#"><i class="fas fa-angle-right"></i></a>
+                    </div>
+                  </nav>                
+                </div>
+              </div>
+              <div class="employer-filter-wrapper">
+                <div class="selected-options same-pad">
+                  <div class="selection-title">
+                    <h4>You Selected</h4>
+                    <a href="#">Clear All</a>
+                  </div>
+                  <ul class="filtered-options">
+                  </ul>
+                </div>
+                <div class="employer-filter-dropdown same-pad category">
+                  <select class="selectpicker">
+                    <option value="" selected>Catégorie</option>
+                    <option value="california">Accounting / Finance</option>
+                    <option value="california">Education</option>
+                    <option value="california">Design &amp; Creative</option>
+                    <option value="california">Health Care</option>
+                    <option value="california">Engineer &amp; Architects</option>
+                    <option value="california">Marketing &amp; Sales</option>
+                    <option value="california">Garments / Textile</option>
+                    <option value="california">Customer Support</option>
+                    <option value="california">Digital Media</option>
+                    <option value="california">Telecommunication</option>
+                  </select>
+                </div>
+                <div class="employer-filter-dropdown same-pad location">
+                  <select class="selectpicker">
+                    <option value="" selected>Emplacement</option>
+                    <option value="california">Chicago</option>
+                    <option value="california">New York City</option>
+                    <option value="california">San Francisco</option>
+                    <option value="california">Washington</option>
+                    <option value="california">Boston</option>
+                    <option value="california">Los Angeles</option>
+                    <option value="california">Seattle</option>
+                    <option value="california">Las Vegas</option>
+                    <option value="california">San Diego</option>
+                  </select>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    {% block action %} {{ parent() }} {% endblock %}
+    {% block footer %} {{ parent() }} {% endblock %}
+
+
+
+
+{% endblock %}

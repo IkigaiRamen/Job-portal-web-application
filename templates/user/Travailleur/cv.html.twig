@@ -1,0 +1,153 @@
+{% extends 'base.html.twig' %}
+{% block head %} {% block stylesheet %} {{ parent() }}{% endblock %} {% endblock %}
+{% block body %}
+    {% block con %}    {{ parent() }} {% endblock %}
+    <div class="alice-bg padding-top-70 padding-bottom-70">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="breadcrumb-area">
+                        <h1>CV</h1>
+                        <nav aria-label="breadcrumb">
+                            <ol class="breadcrumb">
+                                <li class="breadcrumb-item"><a href="#">Acceuil</a></li>
+                                <li class="breadcrumb-item active" aria-current="page">Curriculum Vitae</li>
+                            </ol>
+                        </nav>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="breadcrumb-form">
+                        <form action="#">
+                            <input type="text" placeholder="Enter Keywords">
+                            <button><i data-feather="search"></i></button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Breadcrumb End -->
+
+    <div class="alice-bg section-padding-bottom">
+        <div class="container no-gliters">
+            <div class="row no-gliters">
+                <div class="col">
+                    <div class="dashboard-container">
+                        <div class="dashboard-content-wrapper">
+
+                            <div class="skill-and-profile dashboard-section">
+
+                                <div class="social-profile">
+                                    <label>Social:</label>
+                                    <a href="#"><i class="fab fa-facebook-f"></i></a>
+                                    <a href="#"><i class="fab fa-twitter"></i></a>
+                                    <a href="#"><i class="fab fa-google-plus"></i></a>
+                                    <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                                    <a href="#"><i class="fab fa-pinterest-p"></i></a>
+                                    <a href="#"><i class="fab fa-behance"></i></a>
+                                    <a href="#"><i class="fab fa-dribbble"></i></a>
+                                    <a href="#"><i class="fab fa-github"></i></a>
+                                </div>
+                            </div>
+                            <div class="about-details details-section dashboard-section">
+                                <h4><i data-feather="align-left"></i>A propos de moi</h4>
+                                <p>{{ app.user.bio}}</p>
+
+                                {% if app.user.bio is null %}
+                                <h3>Cette Section est vide , Modifier votre informations avant!<h3>
+                                        {% else %}
+                                            <div class="information-and-contact">
+                                                <div class="information">
+                                                    <h4>Informations</h4>
+                                                    <ul>
+                                                        <li><span>Domaine:</span> {{app.user.job}}</li>
+                                                        <li><span>Adresse:</span> {{ app.user.city }}</li>
+                                                        <li><span>Etat:</span> {{ app.user.etat }}</li>
+                                                        <li><span>Experience:</span> {{app.user.exp}} Années</li>
+                                                        <li><span>Sex:</span> {{ app.user.sex }}</li>
+                                                        <li><span>Qualifications:</span> {{ app.user.qualification }}</li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                        {% endif %}
+                            </div>
+                            <div class="edication-background details-section dashboard-section">
+                                <h4><i data-feather="book"></i>Education</h4>
+                                {% if app.user.titre1 is null %}
+
+                                <h3>Cette Section est vide , Modifier votre informations avant!<h3>
+                                        {% else %}
+                                            <div class="education-label">
+                                                <span class="study-year">{{ app.user.periode1 }}</span>
+                                                <h5>{{ app.user.titre1 }}<span>@ {{ app.user.institut1 }}</span></h5>
+                                                <p>{{ app.user.description1 }}</p>
+                                            </div>
+                                        {% endif %}
+
+                                        {% if app.user.titre2 is null %}
+
+                                        {% else %}
+                                            <div class="education-label">
+                                                <span class="study-year">{{ app.user.periode2 }}</span>
+                                                <h5>{{ app.user.titre2 }}<span>@ {{ app.user.institut2 }}</span></h5>
+                                                <p>{{ app.user.description1 }}</p>
+                                            </div>
+                                        {% endif %}
+
+
+                            </div>
+                            <div class="experience dashboard-section details-section">
+                                <h4><i data-feather="briefcase"></i>Expérience professionnelle</h4>
+                                {% if app.user.work1 is null %}
+
+                                <h3>Cette Section est vide , Modifier votre informations avant!<h3>
+                                        {% else %}
+                                            <div class="experience-section">
+                                                <span class="service-year">{{ app.user.workperiod1 }}</span>
+                                                <h5>{{ app.user.work1 }}<span>@ {{ app.user.company1 }}</span></h5>
+                                                <p>{{ app.user.workdescription1 }}</p>
+                                            </div>
+                                        {% endif %}
+
+                                        {% if app.user.work2 is null %}
+
+                                        {% else %}
+
+                                            <div class="experience-section">
+                                                <span class="service-year">{{ app.user.workperiod2 }}</span>
+                                                <h5>{{ app.user.work2 }}<span>@ {{ app.user.company2 }}</span></h5>
+                                                <p>{{ app.user.workdescription2 }}</p>
+                                            </div>
+                                        {% endif %}
+                            </div>
+                            <div class="special-qualification dashboard-section details-section">
+                                <h4><i data-feather="gift"></i>Qualifications spéciales</h4>
+                                {% if app.user.qualification1 is null %}
+
+                                    <h3>Cette Section est vide , Modifier votre informations avant!</h3>
+                                {% else %}
+                                    <ul>
+                                        <li>{{app.user.qualification1}}</li>
+                                        <li>{{app.user.qualification2}}</li>
+                                        <li>{{app.user.qualification3}}</li>
+                                        <li>{{app.user.qualification4}}</li>
+                                    </ul>
+                                {% endif %}
+                            </div>
+                        </div>
+                        {% block sidebar %}    {{ parent() }}
+                        {% endblock %}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    {% block action %} {{ parent() }} {% endblock %}
+    {% block footer %} {{ parent() }} {% endblock %}
+
+
+
+
+{% endblock %}

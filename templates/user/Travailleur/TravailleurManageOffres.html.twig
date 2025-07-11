@@ -1,0 +1,93 @@
+{% extends 'base.html.twig' %}
+{% block head %} {% block stylesheet %} {{ parent() }}{% endblock %} {% endblock %}
+{% block body %}
+    {% block con %}    {{ parent() }} {% endblock %}
+    <div class="alice-bg padding-top-70 padding-bottom-70">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="breadcrumb-area">
+                        <h1>Liste des offres</h1>
+                        <nav aria-label="breadcrumb">
+                            <ol class="breadcrumb">
+                                <li class="breadcrumb-item"><a href="#">Acceuil</a></li>
+                                <li class="breadcrumb-item active" aria-current="page">Liste des offres</li>
+                            </ol>
+                        </nav>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="breadcrumb-form">
+                        <form action="#">
+                            <input type="text" placeholder="Enter Keywords">
+                            <button><i data-feather="search"></i></button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="alice-bg section-padding-bottom">
+    <div class="container no-gliters">
+        <div class="row no-gliters">
+            <div class="col">
+                <div class="dashboard-container">
+                    <div class="dashboard-content-wrapper">
+                        <div class="manage-candidate-container">
+                            <table class="table">
+                                <thead>
+                                <tr>
+                                    <th>Candidats</th>
+                                    <th>Status</th>
+                                    <th class="action">Action</th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                {% for annonces in app.user.annonces %}
+                                    {% for apply in annonces.apply %}
+                                        <tr class="candidates-list">
+                                            <td class="title">
+                                                <div class="thumb">
+
+                                                    <img src="  {{ asset("/uploads/images/products/#{apply.image()}#")}}"class="img-fluid" alt="">
+                                                </div>
+
+                                                <div class="body">
+                                                <a href="{{ path('app_entretien_index') }}">Create new booking</a>
+                                                    <h5><a href="{{ path('user_show', {id: apply.UserId}) }}">{{apply.societe}}</a></h5>
+                                                    <div class="info">
+                                                        <span class="designation"><a href="#"><i data-feather="check-square"></i>{{apply.job}}</a></span>
+                                                        <span class="location"><a href="#"><i data-feather="map-pin"></i>{{apply.city}}</a></span>
+                                                    </div>
+                                                </div>
+                                            </td>
+                                            <td class="status"><i data-feather="check-circle"></i>Shortlisted</td>
+                                            <td class="action">
+                                                <a class="download" href="#" data-toggle="modal" data-target="#apply-popup-id">Offre</a>
+                                                <a href="#" class="inbox"><i data-feather="mail"></i></a>
+                                                <a href="#" class="remove"><i data-feather="trash-2"></i></a>
+                                            </td>
+                                        </tr>
+                                    {% endfor %}
+                                {% endfor %}
+                                </tbody>
+                            </table>
+
+                        </div>
+                    </div>
+                    {%block sidebar%}    {{ parent() }}
+                    {% endblock %}
+                </div>
+            </div>
+        </div>
+    </div>
+
+    {% block action %} {{ parent() }} {% endblock %}
+    {% block footer %} {{ parent() }} {% endblock %}
+
+
+
+
+{% endblock %}

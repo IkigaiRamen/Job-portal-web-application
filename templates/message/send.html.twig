@@ -1,0 +1,47 @@
+{% extends 'base2.html.twig' %}
+{% block head %} {% block stylesheet %} {{ parent() }}{% endblock %} {% endblock %}
+{% block body %}
+    {% block con %}    {{ parent() }} {% endblock %}
+
+
+
+    <div class="alice-bg section-padding-bottom">
+        <div class="container no-gliters">
+            <div class="row no-gliters">
+                <div class="col">
+                    <div class="dashboard-container">
+                        <div class="dashboard-content-wrapper">
+                            <div class="manage-job-container">
+                                <div class="col">
+                                    <h1>Envoyer un message</h1>
+                                    {{ form(form) }}
+                                    <br>
+                                    <a href="{{ path("message") }}" class="btn btn-primary">Accueil</a>
+                                    <a href="{{ path("received") }}" class="btn btn-primary">Boîte de réception</a>
+                                    <a href="{{ path("sent") }}" class="btn btn-primary">Eléments envoyés</a>
+
+
+                                </div>
+
+                            </div>
+                        </div>
+                        {%block sidebar%}    {{ parent() }}
+                        {% endblock %}
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+
+
+
+
+
+    {% block action %} {{ parent() }} {% endblock %}
+    {% block footer %} {{ parent() }} {% endblock %}
+
+
+
+
+{% endblock %}
